@@ -3,11 +3,29 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
-    <title>Responsive Website Design</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>An Ungodly Timesink</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- Banner -->
+    <nav role="navigation">
+      <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#About">About Us</a></li>
+          <li><a href="#Services">Services</a></li>
+          <li><a href="#Tech">Technology</a></li>
+          <li><a href="#Clients">Clients</a></li>
+          <li><a href="#Test">Testimonials</a></li>
+          <li><a href="#Contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
     <div class="banner">
       <header>
         <a
@@ -15,12 +33,11 @@
           target="_blank"
           rel="noopener noreferrer"
           class="logo"
-          >Rick Roll</a
+          >Brand Name</a
         >
-        <div class="toggle"></div>
       </header>
       <img src="assets/bg.jpg" />
-      <div class="content">
+      <div class="content" id="home">
         <h2>Success by Design</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
@@ -38,7 +55,7 @@
       </div>
     </div>
     <!-- About -->
-    <section class="about">
+    <section class="about" id="About">
       <div class="contentBx">
         <h2 class="heading">About us</h2>
         <p class="text">
@@ -69,7 +86,7 @@
       <div class="imgBx"></div>
     </section>
     <!-- Services -->
-    <section class="services">
+    <section class="services" id="Services">
       <h2 class="heading">Our Services</h2>
       <p class="text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id
@@ -106,7 +123,7 @@
       </div>
     </section>
     <!-- Tech -->
-    <section class="technology">
+    <section class="technology" id="Tech">
       <div class="contentBx">
         <h2 class="heading">Cutting Edge Technology</h2>
         <p class="text">
@@ -128,7 +145,7 @@
       </div>
     </section>
     <!-- Client -->
-    <section class="client">
+    <section class="client" id="Clients">
       <h2 class="heading">Our Clients</h2>
       <p class="text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id
@@ -175,7 +192,7 @@
       </div>
     </section>
     <!-- Testimonials -->
-    <section class="testimonials">
+    <section class="testimonials" id="Test">
       <h2 class="heading">What Our Clients Say</h2>
       <div class="container">
         <div class="contentBx">
@@ -210,7 +227,7 @@
       </div>
     </section>
     <!-- Contact -->
-    <section class="about">
+    <section class="about" id="Contact">
       <div class="contentBx redbg">
         <div class="form">
           <div class="inputBx">
@@ -267,5 +284,35 @@
       </ul>
     </section>
   </body>
+  <!-- JS SMOOTH SCROLLING -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Add smooth scrolling to all links
+      $("a").on("click", function (event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top,
+            },
+            800,
+            function () {
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            }
+          );
+        } // End if
+      });
+    });
+  </script>
 </html>
-<!-- Totaling 638 lines of code -->
+<!-- Totaling  lines of code -->
