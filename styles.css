@@ -5,6 +5,157 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #232323;
+  overflow-x: hidden;
+}
+
+/* ............/Desktop Navbar/............ */
+
+.navbar-container input[type="checkbox"],
+.navbar-container .hamburger {
+  display: block;
+  color: black;
+}
+.navbar-container {
+  display: block;
+  position: relative;
+  height: 64px;
+}
+.navbar-container input[type="checkbox"] {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 30px;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+}
+.navbar-container .hamburger {
+  display: block;
+  height: 23px;
+  width: 35px;
+  position: absolute;
+  top: 13px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.navbar-container .hamburger .bar {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #333;
+}
+.navbar-container .hamburger .bar1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+.navbar-container .hamburger .bar2 {
+  transition: transform 0.2s ease-in-out;
+}
+.navbar-container .hamburger .bar3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+.navbar .menu-items {
+  padding-top: 128rem;
+  background: #fff;
+  height: 4000px;
+  max-width: 300px;
+  transform: translate(-150%);
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  transition: transform 0.5s ease-in-out;
+  box-shadow: 5px 0px 10px 0px #aaa;
+}
+.navbar .menu-items li {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.navbar-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0);
+}
+.navbar-container input[type="checkbox"]:checked ~ .hamburger .bar1 {
+  transform: rotate(45deg) translate(-3px, 0px);
+}
+.navbar-container input[type="checkbox"]:checked ~ .hamburger .bar2 {
+  transform: scaleY(0);
+}
+.navbar-container input[type="checkbox"]:checked ~ .hamburger .bar3 {
+  transform: rotate(-45deg) translate(-3px, 0px);
+}
+.navbar {
+  box-shadow: 0px 5px 10px 0px #9abff0;
+  position: fixed;
+  width: 100%;
+  background: #9abff0;
+  color: #000;
+  opacity: 1;
+  height: 50px;
+  z-index: 12;
+}
+.navbar-container {
+  display: flex;
+  height: 64px;
+  align-items: center;
+}
+.menu-items {
+  order: 1;
+  display: flex;
+  margin-right: 5rem;
+}
+.menu-items li {
+  list-style: none;
+  margin-right: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+.menu-items a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+.menu-items a:hover {
+  color: tomato;
+  transition: color 0.3s ease-in-out;
+}
+.logo {
+  position: absolute;
+  right: 15px;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #444;
+  transition: color 0.25s ease;
+}
+a:hover {
+  color: tomato;
+}
+
+/* ............/Banner/............ */
+
 .banner {
   position: relative;
   width: 100%;
@@ -45,24 +196,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10000;
+  z-index: 1;
 }
-.banner header .logo {
-  color: #fff;
-  text-decoration: none;
-  font-size: 24px;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-.banner header .toggle {
-  position: relative;
-  width: 36px;
-  height: 28px;
-  background: url(assets/toggle.png);
-  background-size: cover;
-  cursor: pointer;
-}
+
+/* ............/About Us/............ */
+
 .about {
   position: relative;
   width: 100%;
@@ -92,6 +230,9 @@
   background-size: cover;
   background-position: center;
 }
+
+/* ............/Services/............ */
+
 .services {
   background: #12222d;
   padding: 100px;
@@ -108,20 +249,25 @@
 .services .container .serviceBx {
   position: relative;
   background: #fff;
+  margin: auto;
+  margin-top: 10px;
   width: 350px;
-  height: 400px;
+  height: 320px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-/* .services .container .serviceBx img {
+.services .container .serviceBx img {
   max-width: 100px;
 }
 .services .container .serviceBx h2 {
   font-weight: 500;
   font-size: 20px;
   letter-spacing: 1px;
-} */
+}
+
+/* ............/Tech/............ */
+
 .technology {
   background: #3f8ffc;
   width: 100%;
@@ -141,6 +287,9 @@
 .technology .imgBx img {
   max-width: 100%;
 }
+
+/* ............/Clients/............ */
+
 .client {
   background: #162c3b;
   padding: 100px;
@@ -157,11 +306,15 @@
   max-width: 200px;
   margin: 20px;
   opacity: 0.25;
+  opacity: 0.75;
   cursor: pointer;
 }
 .client .imgBx img:hover {
   opacity: 1;
 }
+
+/* ............/Testimonials/............ */
+
 .testimonials {
   position: relative;
   padding: 100px;
@@ -173,7 +326,6 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 40px;
-  flex-wrap: wrap;
 }
 .testimonials .container .contentBx {
   background: #fff;
@@ -193,6 +345,9 @@
   font-weight: 500;
   color: #000;
 }
+
+/* ............/Contact Us/............ */
+
 .contact {
   padding: 100px;
   background: #162c3b;
@@ -205,9 +360,7 @@
   width: 50%;
 }
 .redbg {
-  background: url(assets/red.jpg) !important;
-  background-size: cover;
-  background-position: center;
+  background-color: aqua;
 }
 .form .inputBx {
   margin-bottom: 40px;
@@ -251,6 +404,9 @@ textarea {
   cursor: pointer;
   font-weight: 400;
 }
+
+/* ............/Footer/............ */
+
 .footer {
   background: #162c3b;
   padding: 20px 100px;
@@ -275,7 +431,91 @@ textarea {
   filter: invert(1);
   max-width: 20px;
 }
-@media (max-width: 1267px) {
+@media (max-width: 768px) {
+  /* ............/Media Query/............ */
+  .navbar-container {
+    display: block;
+    position: relative;
+    height: 64px;
+  }
+  .navbar-container input[type="checkbox"] {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 30px;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    opacity: 0;
+  }
+  .navbar-container .hamburger {
+    display: block;
+    height: 23px;
+    width: 35px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .navbar-container .hamburger .bar {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #333;
+  }
+  .navbar-container .hamburger .bar1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+  }
+  .navbar-container .hamburger .bar2 {
+    transition: transform 0.2s ease-in-out;
+  }
+  .navbar-container .hamburger .bar3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+  .navbar .menu-items {
+    padding-top: 100px;
+    background: #fff;
+    height: 100vh;
+    max-width: 300px;
+    transform: translate(-150%);
+    display: flex;
+    flex-direction: column;
+    margin-left: -40px;
+    padding-left: 50px;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: 5px 0px 10px 0px #aaa;
+    z-index: 10;
+    overflow-y: auto;
+  }
+  .navbar .menu-items li {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  .logo {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 1.7rem;
+  }
+  .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+  }
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger .bar1 {
+    transform: rotate(45deg) translate(-3px, 0px);
+  }
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger .bar2 {
+    transform: scaleY(0);
+  }
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger .bar3 {
+    transform: rotate(-45deg) translate(-3px, 0px);
+  }
   .banner {
     padding: 50px;
     height: 110%;
@@ -286,12 +526,9 @@ textarea {
   .banner header .logo {
     font-size: 20px;
   }
-  .banner header .toggle {
-    width: 25px;
-    height: 20px;
-  }
   .banner .content h2 {
     font-size: 36px;
+    padding-top: 50px;
   }
   .banner .content p {
     font-size: 18px;
@@ -304,10 +541,7 @@ textarea {
     width: 100%;
   }
   .about .imgBx {
-    width: 100%;
-    padding: 50px;
-    min-height: 400px;
-    text-align: center;
+    display: none;
   }
   .services {
     padding: 50px;
@@ -335,6 +569,7 @@ textarea {
     padding: 50px;
   }
   .client .imgBx {
+    display: hidden;
     justify-content: center;
   }
   .testimonials {
@@ -343,11 +578,11 @@ textarea {
   }
   .testimonials .container {
     flex-direction: column;
+    text-align: center;
   }
   .testimonials .container .contentBx {
     padding: 40px 40px;
-    width: 170%;
-    transform: translateX(-65px);
+    width: 80vw;
     margin-bottom: 40px;
   }
   .testimonials .container .contentBx:last-child {
@@ -363,5 +598,12 @@ textarea {
   }
   .footer ul {
     margin-bottom: 20px;
+  }
+}
+@media (max-width: 1250px) {
+  .technology .imgBx img {
+    display: flex;
+    justify-items: center;
+    max-width: 250px;
   }
 }
