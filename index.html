@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="home">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>An Ungodly Timesink</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- Banner -->
-    <nav role="navigation">
-      <div id="menuToggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-        <ul id="menu">
+    <nav class="navbar">
+      <div class="navbar-container container">
+        <input type="checkbox" name="" id="" />
+        <div class="hamburger" id="">
+          <span class="bar bar1"></span>
+          <span class="bar bar2"></span>
+          <span class="bar bar3"></span>
+        </div>
+        <ul class="menu-items">
           <li><a href="#home">Home</a></li>
           <li><a href="#About">About Us</a></li>
           <li><a href="#Services">Services</a></li>
@@ -24,10 +33,6 @@
           <li><a href="#Test">Testimonials</a></li>
           <li><a href="#Contact">Contact</a></li>
         </ul>
-      </div>
-    </nav>
-    <div class="banner">
-      <header>
         <a
           href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           target="_blank"
@@ -35,9 +40,12 @@
           class="logo"
           >Brand Name</a
         >
-      </header>
+      </div>
+    </nav>
+    <div class="banner">
+      <header class="header"></header>
       <img src="assets/bg.jpg" />
-      <div class="content" id="home">
+      <div class="content" id="">
         <h2>Success by Design</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
@@ -65,21 +73,12 @@
           blandit dui nisl, blandit porta ipsum porta ut. Integer imperdiet id
           sem non auctor. Donec quis egestas tortor, non auctor dui. Nullam
           fermentum ex et leo egestas blandit. Proin tincidunt orci sed mauris
-          semper eleifend. Aenean luctus maximus arcu a consequat. Duis cursus
-          eget leo vestibulum ornare. Phasellus maximus nulla vitae urna
+          semper eleifend. Aenean luctus maximus arcu a consequat.<br /><br />
+          Nullam fermentum ex et leo egestas blandit. Proin tincidunt orci sed
+          mauris semper eleifend. Aenean luctus maximus arcu a consequat. Duis
+          cursus eget leo vestibulum ornare. Phasellus maximus nulla vitae urna
           pulvinar volutpat. Maecenas faucibus pharetra orci. Proin fringilla
           quam feugiat tempor viverra. Pellentesque ornare mauris eget magna
-          facilisis, elementum pellentesque lacus mattis.<br /><br />Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit. Suspendisse id erat
-          turpis. Aliquam aliquet sit amet turpis id volutpat. Nunc sapien
-          libero, hendrerit ut metus eu, blandit vehicula lectus. Morbi blandit
-          dui nisl, blandit porta ipsum porta ut. Integer imperdiet id sem non
-          auctor. Donec quis egestas tortor, non auctor dui. Nullam fermentum ex
-          et leo egestas blandit. Proin tincidunt orci sed mauris semper
-          eleifend. Aenean luctus maximus arcu a consequat. Duis cursus eget leo
-          vestibulum ornare. Phasellus maximus nulla vitae urna pulvinar
-          volutpat. Maecenas faucibus pharetra orci. Proin fringilla quam
-          feugiat tempor viverra. Pellentesque ornare mauris eget magna
           facilisis, elementum pellentesque lacus mattis.
         </p>
       </div>
@@ -165,6 +164,7 @@
           href="https://www.google.com/"
           target="_blank"
           rel="noopener noreferrer"
+          id="google"
         >
           <img src="assets/brand1.png" alt="" />
         </a>
@@ -172,6 +172,7 @@
           href="https://www.amazon.com/"
           target="_blank"
           rel="noopener noreferrer"
+          id="amazon"
         >
           <img src="assets/brand2.png" alt="" />
         </a>
@@ -179,6 +180,7 @@
           href="https://www.twitter.com/"
           target="_blank"
           rel="noopener noreferrer"
+          id="twitter"
         >
           <img src="assets/brand3.png" alt="" />
         </a>
@@ -186,6 +188,7 @@
           href="https://www.facebook.com/"
           target="_blank"
           rel="noopener noreferrer"
+          id="facebook"
         >
           <img src="assets/brand4.png" alt="" />
         </a>
@@ -284,35 +287,5 @@
       </ul>
     </section>
   </body>
-  <!-- JS SMOOTH SCROLLING -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      // Add smooth scrolling to all links
-      $("a").on("click", function (event) {
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-          // Prevent default anchor click behavior
-          event.preventDefault();
-
-          // Store hash
-          var hash = this.hash;
-
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-          $("html, body").animate(
-            {
-              scrollTop: $(hash).offset().top,
-            },
-            800,
-            function () {
-              // Add hash (#) to URL when done scrolling (default click behavior)
-              window.location.hash = hash;
-            }
-          );
-        } // End if
-      });
-    });
-  </script>
 </html>
 <!-- Totaling  lines of code -->
