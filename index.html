@@ -6,19 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Website Template</title>
     <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
   </head>
   <body>
     <!-- Banner -->
     <nav class="navbar">
       <div class="navbar-container container">
-        <input type="checkbox" name="" id="" />
+        <input type="checkbox" name="" id="" class="toggle" />
         <div class="hamburger" id="">
           <span class="bar bar1"></span>
           <span class="bar bar2"></span>
@@ -318,6 +311,16 @@
         } // End if
       });
     });
+  </script>
+  <script>
+    function hideMenu() {
+      let menuOpen = document.querySelector(".toggle").checked;
+
+      if ((menuOpen = true)) {
+        document.querySelector(".toggle").checked = false;
+      }
+    }
+    window.addEventListener("scroll", hideMenu);
   </script>
 </html>
 <!-- Totaling  lines of code -->
